@@ -16,26 +16,38 @@
 </div>
 
 <script>
-    // Typing animation
-    var text = "Sorry baby nagcocode ako, wait lang ha.. I love you!";
-    var index = 0;
-    var speed = 95; // Adjust the speed of typing animation (in milliseconds)
+  var texts = ["Inaantok ka na ba..??", "Ako din e hahahaha sorry..", "tulog na ko, bye I love you!!"];
+  var textIndex = 0;
+  var charIndex = 0;
+  var speed = 100;
+  var removing = false;
 
-    function typeText() {
-      if (index < text.length) {
-        document.getElementById("typing-animation").innerHTML = text.slice(0, index) + '<span class="cursor">|</span>';
-        index++;
-        setTimeout(typeText, speed);
-      } else {
-        // Toggle cursor visibility every 500ms when typing is done
-        setInterval(function() {
-          var cursor = document.querySelector('.cursor');
-          cursor.style.visibility = cursor.style.visibility === 'visible' ? 'hidden' : 'visible';
-        }, 500);
-      }
+  function typeText() {
+    if (charIndex < texts[textIndex].length && !removing) {
+      document.getElementById("typing-animation").innerHTML = texts[textIndex].slice(0, charIndex) + '<span class="cursor">|</span>';
+      charIndex++;
+      setTimeout(typeText, speed);
+    } else if (charIndex > 0 && removing) {
+      document.getElementById("typing-animation").innerHTML = texts[textIndex].slice(0, charIndex) + '<span class="cursor">|</span>';
+      charIndex--;
+      setTimeout(typeText, speed);
+    } else if (charIndex === 0 && removing && textIndex < texts.length - 1) {
+      removing = false;
+      textIndex++;
+      setTimeout(typeText, speed);
+    } else if (charIndex === texts[textIndex].length && !removing && textIndex === texts.length - 1) {
+      // Keep the cursor blinking
+      setInterval(function() {
+        var cursor = document.querySelector('.cursor');
+        cursor.style.visibility = cursor.style.visibility === 'visible' ? 'hidden' : 'visible';
+      }, 500);
+    } else {
+      removing = true;
+      setTimeout(typeText, speed);
     }
+  }
 
-    typeText();
+  typeText();
 </script>
 
 <div class="container pt-5">
