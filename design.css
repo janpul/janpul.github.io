@@ -19,15 +19,24 @@
     }
 
     .emptext {
-      font-size: 65px;
+      font-size: 5em;
       font-weight: 900;
     }
 
     .empsmall {
-      font-size: 25px;
+      font-size: 2em;
       font-weight: 800;
       color: #6c757d;
     }
+
+    @media (max-width: 768px) {
+      .empsmall {
+          font-size: 1.5em; /* smaller size for screens up to 768px wide */
+      }
+      .emptext {
+          font-size: 2.5em; /* smaller size for screens up to 768px wide */
+      }
+  }
 
     .highlight {
         background-color: #0f1113;
