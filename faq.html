@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Your new one payment system for Filipino Drivers.">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="design.css">
 </head>
 <body>
@@ -17,11 +17,11 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item">
-            <a class="nav-link" href="faq.php">FAQs</a>
+            <a class="nav-link" href="index.php">Home</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="faq.php">FAQs <span class="sr-only">(current)</span></a></a>
         <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
         </li>
@@ -32,20 +32,10 @@
   </div>
 </nav>
 
-<div class="pt-5">
-  <h4 class="text-center empsmall">Filipino Drivers, say hello to...</h1>
-  <h1 class="text-center emptext" id="typing-animation"></h1>
-
-  <div class="container pt-1">
-  <p class="text-center">PayYoTicket is the latest innovative system designed to streamline the process for traffic violators to make payments for their violations.
-    This system aims to reduce the hassle and time-consuming traditional methods of payment, providing a user-friendly online platform where violators can quickly and securely pay their fines.</p>
-</div>
-</div>
-
-<div class="container pt-3">
-    <a href="form.php" class="btn btn-primary btn-lg btn-block mt-1" role="button"><i class="bi bi-arrow-right-circle-fill"></i> Get Started</a>
-  </div>
-</div>
+<div class="container pt-5">
+    <h4 class="text-center empsmall">Some question in mind?</h4>
+    <h1 class="text-center emptext">Frequently Asked Questions</h1>
+    <p class="text-center">We understand that you may have questions about our services. Here are some of the most frequently asked questions that we receive from our users. If you have a question that is not answered here, please feel free to contact us.</p>
 </div>
 
 <div class="container pt-5">
@@ -70,43 +60,9 @@
   </div>
 </footer>
 
-<script>
-  var texts = ["Faster...", "Efficient...", "Your One Payment System.."];
-  var textIndex = 0;
-  var charIndex = 0;
-  var speed = 140;
-  var removing = false;
-
-  function typeText() {
-    if (charIndex < texts[textIndex].length && !removing) {
-      document.getElementById("typing-animation").innerHTML = texts[textIndex].slice(0, charIndex) + '<span class="cursor">|</span>';
-      charIndex++;
-      setTimeout(typeText, speed);
-    } else if (charIndex > 0 && removing) {
-      document.getElementById("typing-animation").innerHTML = texts[textIndex].slice(0, charIndex) + '<span class="cursor">|</span>';
-      charIndex--;
-      setTimeout(typeText, speed);
-    } else if (charIndex === 0 && removing && textIndex < texts.length - 1) {
-      removing = false;
-      textIndex++;
-      setTimeout(typeText, speed);
-    } else if (charIndex === texts[textIndex].length && !removing && textIndex === texts.length - 1) {
-      // Keep the cursor blinking
-      setInterval(function() {
-        var cursor = document.querySelector('.cursor');
-        cursor.style.visibility = cursor.style.visibility === 'visible' ? 'hidden' : 'visible';
-      }, 500);
-    } else {
-      removing = true;
-      setTimeout(typeText, speed);
-    }
-  }
-
-  typeText();
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 
 </body>
 </html>

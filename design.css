@@ -41,7 +41,30 @@
     .highlight {
         background-color: #0f1113;
         color: #ffffff;
-        padding: 10px;
+        padding: 5px;
         margin: 2px;
         border-radius: 5px;
     }
+
+    .rounded-card {
+      border-radius: 15px !important;
+  }
+
+  .card {
+    border-radius: 15px !important;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.card-header {
+    background-color: #f8f9fa;
+    border-radius: 15px 15px 0 0 !important;
+}
+.btn-link {
+    color: #333;
+    text-decoration: none;
+}
+.btn-link:hover {
+    color: #333;
+    text-decoration: none;
+}
+    
